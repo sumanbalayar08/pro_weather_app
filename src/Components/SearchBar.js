@@ -16,7 +16,7 @@ const handleSubmit=async()=>{
     try{
     const res= await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=17769e544a4a37e4e17e0e777ddd8fba`)
     console.log(res);
-    console.log(api)
+
     }catch(err){
         console.log(`Error Retrieving Data`,{err})
     }
