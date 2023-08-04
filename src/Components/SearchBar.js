@@ -24,9 +24,9 @@ const handleSubmit=async()=>{
 
   return (
     <div>
-        <div>
-            <input type="text" value={city} onChange={handleCityChange} placeholder='Enter City Name' />
-            <button onClick={handleSubmit}>Search</button>
+        <div className='flex flex-auto p-16 items-center justify-center'>
+            <input type="text" value={city} onChange={handleCityChange} placeholder='Enter City Name' className='w-[50%] rounded-l-sm p-2' />
+            <button onClick={handleSubmit} className='text-white bg-blue-500 rounded-r-sm p-2'>Search</button>
         </div>
     </div>
   )
