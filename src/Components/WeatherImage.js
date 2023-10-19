@@ -3,6 +3,7 @@ import sunlight from "../images/icons8-sunlight.svg";
 import cloud from '../images/icons8-cloudy-cloud-96.png';
 import rainfall from '../images/icons8-rainfall-64.png'
 import haze from '../images/icons8-haze-96.png'
+import smoke from '../images/icons8-smoke-80.png'
 import defaultImage from "../weather.png";
 
 
@@ -22,7 +23,11 @@ const WeatherImage = ({weatherType}) => {
     } 
     else if (weatherType === 'Haze') {
         imageSource = haze;
-        altText = 'Cloud';
+        altText = 'haze';
+      }
+      else if (weatherType === 'Smoke') {
+        imageSource = smoke;
+        altText = 'smoke';
       }else {
       // Default image or error handling
       imageSource = defaultImage; // Provide a default image source

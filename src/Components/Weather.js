@@ -25,7 +25,6 @@ const Weather = () => {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=17769e544a4a37e4e17e0e777ddd8fba`
       );
       setWeatherData(res.data);
-      console.log(weatherData.main.temp); // This should work
     } catch (err) {
       console.log(`Error Retrieving Data`, { err });
     }
