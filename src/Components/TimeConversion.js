@@ -24,3 +24,9 @@ const sunsetAmPm = sunsetHours >= 12 ? "PM" : "AM";
 const sunset12hr = ((sunsetHours + 11) % 12 + 1) + ":" + sunsetMinutes + " " + sunsetAmPm;
 return sunset12hr
 }
+
+
+//Get the Current Date
+const date = new Date();
+const options = { weekday: "short", day: "numeric", month: "short" };
+export const formattedDate = new Intl.DateTimeFormat("en-US", options).format(date);

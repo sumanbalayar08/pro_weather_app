@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { BiCurrentLocation } from "react-icons/bi";
 import { CiLocationOn } from "react-icons/ci";
 import WeatherCard from "./WeatherCard";
 import WeatherImage from "./WeatherImage";
-import {sunrise,sunset} from './TimeConversion'
+import {sunrise,sunset,formattedDate} from './TimeConversion'
+import { regionNames } from "./CountryCode";
+import temp from '../images/temprature.png'
+import press from '../images/icons8-pressure-96.png'
+import humid from '../images/icons8-humidity-96.png'
+import wind from '../images/icons8-wind-96.png'
+import cloud from '../images/icons8-cloud-96.png'
+import visib from '../images/icons8-visibility-96.png'
+import sunri from '../images/icons8-sunrise-96.png'
+import sunse from '../images/icons8-sunset-96.png'
 import axios from "axios";
 
 const Weather = () => {
-  //Get the Current Date
-  const date = new Date();
-  const options = { weekday: "short", day: "numeric", month: "short" };
-  const formattedDate = new Intl.DateTimeFormat("en-US", options).format(date);
-
-  //Get the country Name from code
-  const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
 
   const [city, setcity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
@@ -48,38 +49,46 @@ const Weather = () => {
       name: "Temprature",
       data: weatherData ? ((weatherData.main.temp-32)/1.8).toFixed(2) : null,
       unit: "°C",
+      image: temp
     },
     {
       name: "Pressure",
       data: weatherData ? weatherData.main.pressure : null,
       unit: "Pa",
+      image: press
     },
     {
       name: "Humidity",
       data: weatherData ? weatherData.main.humidity : null,
       unit: "%",
+      image: humid
     },
     {
       name: "Wind",
       data: weatherData ? weatherData.wind.speed : null,
       unit: "Km/hr",
+      image: wind
     },
     {
       name: "Clouds",
       data: weatherData ? weatherData.clouds.all : null,
+      image: cloud
     },
     {
       name: "Visibility",
       data: weatherData ? weatherData.visibility / 1000 : null,
       unit: "Km",
+      image: visib
     },
     {
       name: "Sunrise",
       data: weatherData ? sunrise(weatherData.sys.sunrise): null,
+      image: sunri
     },
     {
       name: "Sunset",
       data: weatherData ? sunset(weatherData.sys.sunset) : null,
+      image: sunse
     },
   ];
 
@@ -134,6 +143,7 @@ const Weather = () => {
                   title={item.name}
                   data={item.data}
                   unit={item.unit}
+                  image={item.image}
                 />
               ))}
             </div>
