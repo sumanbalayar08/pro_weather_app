@@ -1,6 +1,5 @@
 import './App.css';
-import WeatherCard from './Components/SensorCard';
-import SearchBar from './Components/SearchBar';
+import Weather from './Components/Weather';
 import HomePage from './Components/HomePage';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
@@ -9,7 +8,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<HomePage/>}/>
-      <Route path='/weather' element={<WeatherCard/>}/>
+      <Route path='/weather' element={<Weather/>}/>
     </Routes>
     </BrowserRouter>
   );

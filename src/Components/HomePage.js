@@ -1,7 +1,6 @@
 import React from "react";
 import myImage from "../weather.png";
 import { useNavigate } from "react-router-dom";
-import Card from "./Card";
 
 const HomePage = () => {
 
