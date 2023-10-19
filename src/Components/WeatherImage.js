@@ -14,7 +14,7 @@ const WeatherImage = ({weatherType}) => {
     if (weatherType === 'Clear') {
       imageSource = sunlight;
       altText = 'Sunlight';
-    } else if (weatherType === 'Rainfall') {
+    } else if (weatherType === 'Rain') {
       imageSource = rainfall;
       altText = 'Rain';
     } else if (weatherType === 'Clouds') {
