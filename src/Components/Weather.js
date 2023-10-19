@@ -46,7 +46,7 @@ const Weather = () => {
   const items = [
     {
       name: "Temprature",
-      data: weatherData ? ((weatherData.main.temp-32)/1.8).toFixed(2) : null,
+      data: weatherData ? (weatherData.main.temp-273.15).toFixed(2) : null,
       unit: "°C",
       image: temp
     },
@@ -115,7 +115,7 @@ const Weather = () => {
             <WeatherImage weatherType={weatherData.weather[0].main}/>
             <div className="flex-col justify-around items-center space-y-8">
               <div className="flex items-center justify-center text-7xl">
-                {((weatherData.main.temp-32)/1.8).toFixed(2)} 
+                {(weatherData.main.temp-273.15).toFixed(2)} 
                 <span className="text-6xl">°C</span>
               </div>
               <div className="flex items-center justify-center text-xl">
